@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="main-block">
+
+        <button (click)="toggle = ! toggle">change color</button>
+
+
+        <!-- <p *ngIf="toggle" class="red">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos, ea.</p>
+        <p *ngIf="!toggle" class="blue">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, accusamus!</p> -->
+
+        
+        <!-- <p [ngClass]="{
+            red:toggle,
+            blue:!toggle
+        }">Lorem ipsum dolor sit amet.</p> -->
+
+
+        <!-- <p *ngIf="toggle; else bye" class="red">Lorem ipsum dolor sit amet.</p>
+
+        <ng-template #bye>
+            <p class="blue">Lorem ipsum dolor sit amet.</p>
+        </ng-template> -->
+
+
+        <!-- <div [ngSwitch]="toggle">
+            <p *ngSwitchCase="true" class="red">Lorem, ipsum.</p>
+            <p *ngSwitchCase="false" class="blue">Lorem ipsum dolor sit amet.</p>
+            <p *ngSwitchDefault>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum accusamus magnam laboriosam sapiente esse asperiores.</p>
+        </div> -->
+
+
+        <!-- <p *ngIf="toggle; else long" >
+            {{now | date | lowercase}}
+        </p>
+        <ng-template #long>
+            <p>
+                {{now | date:"long" | uppercase}}
+            </p>
+        </ng-template> -->
+
+        <p>{{myText | lowercase}}</p>
+        
+
+    </div>
+</div>

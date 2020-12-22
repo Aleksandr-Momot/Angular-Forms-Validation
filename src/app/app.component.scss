@@ -1,0 +1,57 @@
+.card {
+    padding: 30px;
+    border: 1px solid #000;
+    text-align: center;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    padding: 30px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+input {
+    padding: 20px;
+    width: 100%;
+    outline: none;
+    margin-top: 15px;
+    &.ng-invalid.ng-touched {
+        border: 5px solid red;
+    }
+    &.ng-valid.ng-touched {
+        border: 5px solid green;
+    }
+}
+
+form {
+    text-align: center;
+}
+
+.btn {
+    padding: 20px;
+    font-size: 20px;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+small {
+    display: block;
+    color: red;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+select {
+    width: 100%;
+    display: block;
+    padding: 20px;
+    font-size: 16px;
+    margin-top: 15px;
+}
