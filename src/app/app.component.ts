@@ -7,10 +7,9 @@ import { MyValidators } from './my.validators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
-  form!: FormGroup;
+  form: FormGroup;
 // tslint:disable-next-line: typedef
-  ngOnInit() {
+  constructor() {
     this.form = new FormGroup( {
       email: new FormControl('', [Validators.email, Validators.required, MyValidators.restrictedEmails]),
       password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
@@ -19,7 +18,10 @@ export class AppComponent implements OnInit {
         city: new FormControl('', Validators.required)
       }),
       skills: new FormArray ([])
-    });
+    }); 
+  }
+  ngOnInit() {
+      
   }
 // tslint:disable-next-line: typedef
   submit() {
@@ -33,17 +35,24 @@ export class AppComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   setCapital() {
-    const cityMap = {
-      ru: 'Москва',
-      ua: 'Киев',
-      by: 'Минск'
-    };
-
-    const citiKey = this.form.get('address')?.get('country')?.value;
-    const city = cityMap[citiKey];
-    this.form.patchValue({
-      address: {city}
-    });
+    const cityMap = [
+      {
+        key: 'ru',
+        name: 'Москва',
+      },
+      {
+        key: 'ua',
+        name: 'Киев',
+      },
+      {
+        key: 'by',
+        name: 'Минск',
+      }
+    ];
+    const cityCountry = this.form.value.address.country as string;
+    if (cityMap.find(x => x.key === cityCountry)) {
+      this.form.patchValue({address: {city: cityMap.find(x => x.key === cityCountry)?.name}});
+    }
   }
 
   // tslint:disable-next-line: typedef
