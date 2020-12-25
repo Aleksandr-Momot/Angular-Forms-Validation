@@ -18,10 +18,9 @@ export class AppComponent implements OnInit {
         city: new FormControl('', Validators.required)
       }),
       skills: new FormArray ([])
-    }); 
+    });
   }
   ngOnInit() {
-      
   }
 // tslint:disable-next-line: typedef
   submit() {

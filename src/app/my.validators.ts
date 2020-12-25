@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 
 
 export class MyValidators {
-
     static restrictedEmails(control: FormControl): {[key: string]: boolean} {
       if (['123@mail.ru', 'test@mail.ru'].includes(control.value)) {
         return {restrictedEmail: true};
