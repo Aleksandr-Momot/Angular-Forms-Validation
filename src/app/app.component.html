@@ -5,21 +5,21 @@
         <label>Email</label>
         <input formControlName="email" type="text" placeholder="Email">
         <div 
-            *ngIf="form.get('email').invalid && form.get('email').touched"
+            *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
             class="validation">
-            <small *ngIf="form.get('email').errors.required">
+            <small *ngIf="form.get('email')?.errors?.required">
                 Поле email не может быть пустым
             </small>
 
-            <small  *ngIf="form.get('email').errors.email">
+            <small  *ngIf="form.get('email')?.errors?.email">
                 Введите корректный email
             </small>
 
-            <small  *ngIf="form.get('email').errors.restrictedEmail">
+            <small  *ngIf="form.get('email')?.errors?.restrictedEmail">
                 Данный Email недоступен
             </small>
 
-            <small  *ngIf="form.get('email').errors.uniqEmail">
+            <small  *ngIf="form.get('email')?.errors?.uniqEmail">
                 Введите пожалуйста другой емейл, этот емейл уже занят
             </small>
         </div>
@@ -29,15 +29,15 @@
         <label>Пароль</label>
         <input formControlName="password" type="password" placeholder="Пароль">
         <div 
-            *ngIf="form.get('password').invalid && form.get('password').touched"
+            *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
             class="validation">
-            <small *ngIf="form.get('password').errors.required">
+            <small *ngIf="form.get('password')?.errors?.required">
                 Пароль не может быть пустым
             </small>
 
-            <small *ngIf="form.get('password').errors.minlength">
-                Длина должна быть не менее {{form.get('password').errors.minlength.requiredLength}}
-                Сейчас количество символов {{form.get('password').errors.minlength.actualLength}}
+            <small *ngIf="form.get('password')?.errors?.minlength">
+                Длина должна быть не менее {{form.get('password')?.errors?.minlength.requiredLength}}
+                Сейчас количество символов {{form.get('password')?.errors?.minlength.actualLength}}
             </small>
         </div>
     </div>
