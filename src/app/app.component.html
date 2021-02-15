@@ -64,12 +64,12 @@
     <div class="card" formGroupName="skills">
         <h2>Ваши навыки</h2>
         <button (click)="addSkill()" class="btn" type="button">Добавить уменее</button>
-        <div 
-            *ngFor="let control of form.get('skills').controls; let idx = index"
+        <!-- <div 
+            *ngFor="let control of form.get('skills')['controls']; let idx = index"
             class="form-control">
             <label>Умение {{idx + 1}}</label>
             <input type="text" [formControlName]="idx">
-        </div>
+        </div> -->
     </div>
 
     <button class="btn" type="submit" [disabled]="form.invalid || form.pending">Отправить</button>
